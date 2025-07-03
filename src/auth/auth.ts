@@ -45,6 +45,7 @@ export const auth = betterAuth({
 export const verifyToken = async (token: string) => {
     try {
         console.log('Verifying token...');
+        
         const session = await prisma.session.findFirst({
             where: { token },
             select: {
